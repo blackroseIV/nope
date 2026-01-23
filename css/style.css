@@ -343,3 +343,23 @@ body {
     max-width: 320px;
   }
 }
+
+.site-footer {
+    padding: 20px;
+    background-color: #1a1a1a; /* Cor escura e elegante */
+    color: #ffffff;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.credits {
+    font-size: 0.8rem; /* Um pouco menor para dar destaque ao nome do site */
+    opacity: 0.7; /* Sutil, mas legível */
+    margin-top: 10px;
+}
+
+.credits a {
+    color: #00bcd4; /* Uma cor de destaque para sua marca */
+    text-decoration: none;
+    font-weight: bold;
+}
