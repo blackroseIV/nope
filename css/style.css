@@ -19,21 +19,6 @@ body {
 }
 
 /* =========================
-   FUNDO GALÁXIA
-========================= */
-#particles-js {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: -1;
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================
    HEADER
 ========================= */
 .header {
