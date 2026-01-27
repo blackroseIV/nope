@@ -338,9 +338,26 @@ body {
 
     .card {
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
         height: auto;
     }
+
+    /* Aumentando a imagem/ícone dentro do card no mobile */
+    .card img {
+        width: 300px !important;  /* Ajuste esse valor para o tamanho que desejar */
+        height: 140px !important; /* Mantém a proporção */
+        margin-bottom: 20px;      /* Espaço entre a imagem e o título */
+        object-fit: contain;      /* Garante que a imagem não distorça */
+    }
+
+    /* Ajuste opcional: se a imagem ficar grande demais para o card, 
+       aumente um pouco o padding do card ou a altura dele */
+    .card {
+        width: 100%;
+        max-width: 320px; /* Aumentei um pouco para caber a imagem maior */
+        padding: 40px 20px;
+    }
+
 }
 
 
