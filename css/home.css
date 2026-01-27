@@ -3,84 +3,126 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 180px 5% 100px; /* Empurra o conteúdo para baixo da navbar */
-    gap: 50px;
-    max-width: 1200px;
+    padding: 180px 8% 100px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
-.hero-content { max-width: 550px; }
-.hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 25px; }
+.hero-content { flex: 1.2; }
+.hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
 .hero h1 span { color: #6366f1; }
-.hero p { font-size: 18px; color: #a1a1aa; margin-bottom: 35px; }
+.hero p { color: #a1a1aa; font-size: 19px; margin-bottom: 35px; max-width: 500px; }
 
-.hero-buttons { display: flex; gap: 15px; }
+.hero-buttons { display: flex; gap: 20px; }
+.btn { padding: 14px 30px; border-radius: 50px; font-weight: bold; transition: 0.4s; }
+.btn.primary { 
+    background: #4f7cff; 
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(79, 124, 255, 0.2);
+}
+.btn.secondary { 
+    border: 1px solid rgba(255,255,255,0.1); 
+    color: #fff !important; 
+    background: rgba(255,255,255,0.03);
+}
+.btn:hover { transform: translateY(-3px); }
 
-.btn {
-    padding: 14px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+.hero-image { flex: 0.8; text-align: right; position: relative; }
+.hero-image img { 
+    width: 100%; 
+    max-width: 550px; 
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+    animation: float 6s ease-in-out infinite; 
 }
 
-.btn.primary { background: linear-gradient(90deg, #4f7cff, #7a5cff); color: #fff; }
-.btn.secondary { border: 1px solid #2c2c38; color: #fff; }
-
-.hero-image img {
-    max-width: 500px;
-    width: 100%;
-    animation: floating 6s ease-in-out infinite;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-/* SERVICES (CARDS) - ARRUMADO */
+/* CARDS DE SERVIÇOS - ESTILO IDENTIDADE VISUAL 3D */
 .services {
     padding: 100px 5%;
     text-align: center;
-    background: radial-gradient(circle at top, #11122a 0%, #0b0b10 100%);
+    background: radial-gradient(circle at center, #0f0f1a 0%, #050508 100%);
 }
 
-.services h2 { font-size: 36px; margin-bottom: 60px; }
+.services h2 { margin-bottom: 60px; font-size: 38px; font-weight: 800; }
 
 .services-cards {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Importante para não quebrar no mobile */
+    flex-wrap: wrap;
 }
 
 .card {
-    background: linear-gradient(180deg, rgba(24, 24, 38, 0.95), rgba(16, 16, 26, 0.95));
-    border-radius: 22px;
-    padding: 40px 30px;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.4s ease;
+    background: linear-gradient(145deg, #161622 0%, #0c0c12 100%);
+    padding: 50px 35px;
+    border-radius: 28px;
+    width: 330px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    
+    /* MULTI-LAYER SHADOW: Cria a sensação de que o card flutua */
+    box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.07), /* Rim light no topo */
+        0 15px 35px rgba(0, 0, 0, 0.5),           /* Sombra suave */
+        0 5px 10px rgba(0, 0, 0, 0.3);            /* Sombra de proximidade */
 }
 
-/* Controle do tamanho das imagens dos cards */
+/* BRILHO AO PASSAR O MOUSE */
+.card:hover {
+    transform: translateY(-15px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+/* ÍCONES COM DROP SHADOW (IGUAL AO PRINT) */
 .card img {
-    width: 120px; 
-    height: 120px;
+    width: 200px; 
+    height: 200px;
     object-fit: contain;
     margin-bottom: 25px;
+    /* Faz o ícone "brilhar" */
+    filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.4));
 }
 
-.card h3 { font-size: 22px; margin-bottom: 15px; color: #fff; }
-.card p { font-size: 15px; color: #a1a1aa; line-height: 1.5; }
-
-.card:hover { transform: translateY(-15px); }
+.card h3 { margin-bottom: 15px; font-size: 22px; font-weight: 700; color: #fff; }
+.card p { color: #8a8a93; font-size: 15px; line-height: 1.6; }
 
 /* RESPONSIVIDADE HOME */
-@media (max-width: 900px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 140px; }
-    .hero-image img { max-width: 350px; }
-    .hero-buttons { justify-content: center; }
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 5% 50px !important;
+        width: 100% !important;
+    }
+
+    .hero h1 {
+        font-size: 32px !important; /* Diminui o texto para ele não vazar */
+        line-height: 1.2;
+        width: 100%;
+        word-wrap: break-word; /* Força o texto a quebrar se for muito longo */
+    }
+
+    .hero p {
+        font-size: 15px !important;
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Botões um em cima do outro para não apertar */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
