@@ -1,350 +1,340 @@
-/* =========================
-   RESET + BASE
-========================= */
+/* ==========================================================================
+   1. RESET + BASE
+   ========================================================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-  width: 100%;
-  overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  background: #0b0b10;
-  font-family: Arial, sans-serif;
-  color: #fff;
+    background: #0b0b10;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    line-height: 1.6;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ==========================================================================
+   2. HEADER (NAVBAR)
+   ========================================================================== */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(15, 15, 25, 0.85);
-  backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(15, 15, 25, 0.85);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logo img {
-  height: 32px;
+    height: 32px;
 }
 
-/* MENU */
 .menu ul {
-  display: flex;
-  list-style: none;
-  gap: 24px;
+    display: flex;
+    list-style: none;
+    gap: 26px;
 }
 
 .menu a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
+    color: #cfcfd6;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
-.menu a:hover {
-  color: #fff;
+.menu a:hover,
+.menu a.active {
+    color: #6a7cff;
 }
 
-/* CTA */
 .cta a {
-  background: linear-gradient(90deg, #4f7cff, #7a5cff);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 14px;
+    background: linear-gradient(90deg, #4f7cff, #7a5cff);
+    color: #fff;
+    padding: 11px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* =========================
-   HERO
-========================= */
+.cta a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(90, 120, 255, 0.45);
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 40px;
-  gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 170px 40px 90px;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-content {
-  max-width: 520px;
+    max-width: 540px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 16px;
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #6366f1;
 }
 
 .hero p {
-  font-size: 16px;
-  color: #ccc;
+    font-size: 18px;
+    color: #a1a1aa;
+    margin-bottom: 34px;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 24px;
+    display: flex;
+    gap: 16px;
 }
 
-/* BOTÕES */
 .btn {
-  padding: 12px 26px;
-  border-radius: 24px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .btn.primary {
-  background: linear-gradient(90deg, #4f7cff, #7a5cff);
-  color: #fff;
+    background: linear-gradient(90deg, #4f7cff, #7a5cff);
+    color: #fff;
 }
 
 .btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(90,120,255,0.7);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(90, 120, 255, 0.55);
 }
 
 .btn.secondary {
-  border: 1px solid #555;
-  color: #fff;
+    border: 1px solid #2c2c38;
+    color: #fff;
 }
 
 .btn.secondary:hover {
-  background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: #555;
 }
 
-/* HERO IMAGE */
 .hero-image img {
-  max-width: 500px;
-  width: 100%;
-  animation: floating 5s ease-in-out infinite;
+    max-width: 520px;
+    width: 100%;
+    animation: floating 6s ease-in-out infinite;
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* ==========================================================================
+   4. SERVICES (IGUAL AO DESIGN)
+   ========================================================================== */
 .services {
-  padding: 80px 40px;
-  text-align: center;
-  background: #0b0b0f;
+    padding: 120px 40px 150px;
+    background: radial-gradient(circle at top, #11122a 0%, #0b0b0f 65%);
+    text-align: center;
 }
 
 .services h2 {
-  font-size: 32px;
-  margin-bottom: 50px;
+    font-size: 38px;
+    margin-bottom: 80px;
 }
 
 .services-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 34px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 .card {
-  position: relative;
-  background: #14141c;
-  border-radius: 16px;
-  padding: 30px;
-  width: 280px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    width: 340px;
+    height: 420px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(24, 24, 38, 0.95),
+        rgba(16, 16, 26, 0.95)
+    );
+
+    border-radius: 22px;
+    padding: 44px 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    z-index: 1;
 }
 
-/* AURA */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(90,120,255,0.35),
-    rgba(160,90,255,0.35),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-/* GLOW */
-.card::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 18px;
-  background: linear-gradient(120deg, #4f7cff, #7a5cff, #4f7cff);
-  opacity: 0;
-  filter: blur(22px);
-  z-index: -1;
-  transition: opacity 0.4s ease;
-}
-
-.card:hover {
-  transform: translateY(-12px) scale(1.04);
-  box-shadow:
-    0 0 40px rgba(90,120,255,0.6),
-    0 0 90px rgba(160,90,255,0.4);
-}
-
-.card:hover::before,
-.card:hover::after {
-  opacity: 1;
-}
-
-/* CARD CONTENT */
 .card img {
-  width: 140px;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.card:hover img {
-  transform: scale(1.15) rotate(-4deg);
-  filter: drop-shadow(0 0 18px rgba(120,150,255,0.9));
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    margin-bottom: 28px;
 }
 
 .card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 16px;
 }
 
 .card p {
-  font-size: 14px;
-  color: #bdbdbd;
-  line-height: 1.5;
+    font-size: 15px;
+    color: #a1a1aa;
+    line-height: 1.55;
 }
 
-/* =========================
-   ANIMATION
-========================= */
-@keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+/* AURA / GLOW */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(130deg, #4f7cff, #7a5cff, #4f7cff);
+    opacity: 0;
+    filter: blur(22px);
+    z-index: -1;
+    transition: opacity 0.45s ease;
 }
 
-/* =========================
-    MOBILE — AJUSTADO
-========================= */
-@media (max-width: 768px) {
-  
-  /* HEADER: Logo à esquerda e botão à direita, escondendo o menu para não poluir */
-  .header {
-    padding: 15px 20px;
-    justify-content: space-between;
-  }
-
-  .menu {
-    display: none; /* Esconde o menu de texto no mobile para focar no CTA */
-  }
-
-  .logo img {
-    height: 28px;
-  }
-
-  .cta a {
-    padding: 8px 14px;
-    font-size: 12px;
-  }
-
-  /* HERO: Empilhamento Vertical */
-  .hero {
-    flex-direction: column;
-    padding: 60px 20px;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    order: 1; /* Texto primeiro */
-  }
-
-  .hero h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-  }
-
-  .hero p {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  .hero-buttons {
-    flex-direction: column; /* Botões um em cima do outro */
-    width: 100%;
-    gap: 12px;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    display: block;
-  }
-
-  .hero-image {
-    order: 2; /* Imagem embaixo dos botões */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-image img {
-    max-width: 280px; /* Reduz tamanho para caber na tela do celular */
-    margin-top: 20px;
-  }
-
-  /* SERVICES / CARDS */
-  .services {
-    padding: 60px 20px;
-  }
-
-  .services h2 {
-    font-size: 26px;
-  }
-
-  .services-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 320px;
-  }
+.card:hover {
+    transform: translateY(-14px);
+    box-shadow:
+        0 35px 70px rgba(0, 0, 0, 0.65),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
+.card:hover::after {
+    opacity: 0.65;
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
 .site-footer {
-    padding: 20px;
-    background-color: #1a1a1a; /* Cor escura e elegante */
-    color: #ffffff;
+    padding: 40px 20px;
+    background-color: #0b0b0f;
+    border-top: 1px solid #1f1f23;
     text-align: center;
-    font-family: sans-serif;
 }
 
 .credits {
-    font-size: 0.8rem; /* Um pouco menor para dar destaque ao nome do site */
-    opacity: 0.7; /* Sutil, mas legível */
-    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.6;
 }
 
 .credits a {
-    color: #00bcd4; /* Uma cor de destaque para sua marca */
+    color: #4f7cff;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* ==========================================================================
+   ANIMAÇÕES
+   ========================================================================== */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-22px); }
+}
+
+/* ==========================================================================
+   6. MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header { padding: 15px 20px; }
+    .menu { display: none; }
+
+    .hero {
+        flex-direction: column;
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero h1 { font-size: 36px; }
+    .hero-image img { max-width: 300px; }
+
+    .services-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+}
+
+/* ==========================================================================
+   PROFUNDIDADE DA LOGO (OPÇÃO 2 — REALISTA)
+   ========================================================================== */
+
+.logo-depth {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-depth img {
+    position: relative;
+    z-index: 2;
+
+    /* PROFUNDIDADE + GLOW */
+    filter:
+        drop-shadow(0 35px 60px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 40px rgba(80, 120, 255, 0.55));
+}
+
+/* LUZ NO "CHÃO" */
+.logo-depth::after {
+    content: "";
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+    height: 55px;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(100, 140, 255, 0.55),
+        rgba(100, 140, 255, 0.25),
+        transparent 75%
+    );
+
+    filter: blur(30px);
+    z-index: 1;
+    pointer-events: none;
 }
