@@ -269,22 +269,68 @@ body {
     50% { transform: translateY(-22px); }
 }
 
-/* ==========================================================================
-   6. MOBILE
+/* ========================================================================== 
+   6. MOBILE (CORRIGIDO)
    ========================================================================== */
 @media (max-width: 768px) {
-    .header { padding: 15px 20px; }
-    .menu { display: none; }
+    /* HEADER - Mantendo alinhamento horizontal para não bugar */
+    .header { 
+        padding: 10px 15px; 
+        flex-direction: row; /* Volta para horizontal */
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
 
+    .menu { 
+        display: none; /* Esconde o menu de links */
+    }
+
+    /* Logo - Ajuste de tamanho para mobile */
+    .logo {
+        width: auto;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .logo img {
+        height: 24px; /* Diminui um pouco a logo */
+    }
+
+    /* CTA - Botão menor e alinhado à direita */
+    .cta { 
+        order: unset; 
+        width: auto;
+    }
+
+    .cta a {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* HERO - Ajuste para não ficar embaixo do header */
     .hero {
         flex-direction: column;
-        padding-top: 120px;
+        padding: 100px 20px 40px; /* Padding top ajustado */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero h1 { 
+        font-size: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%; /* Botões ocupam a largura toda no mobile */
         text-align: center;
     }
 
-    .hero h1 { font-size: 36px; }
-    .hero-image img { max-width: 300px; }
-
+    /* SERVICES - Cards em coluna */
     .services-cards {
         flex-direction: column;
         align-items: center;
@@ -292,10 +338,12 @@ body {
 
     .card {
         width: 100%;
-        max-width: 350px;
+        max-width: 320px;
         height: auto;
     }
 }
+
+
 
 /* ==========================================================================
    PROFUNDIDADE DA LOGO (OPÇÃO 2 — REALISTA)
