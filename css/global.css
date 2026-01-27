@@ -1,0 +1,99 @@
+/* RESET + BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #0b0b10;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* HEADER (NAVBAR) - ARRUMADO */
+.header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: rgba(15, 15, 25, 0.85);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logo img { height: 32px; display: block; }
+
+/* MENU SEM COR ROXA */
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: #cfcfd6 !important; /* Força a cor cinza */
+    text-decoration: none !important; /* Tira o sublinhado */
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: #6a7cff !important;
+}
+
+/* BOTÃO WHATSAPP NO HEADER */
+.cta .btn-whatsapp {
+    background: linear-gradient(90deg, #4f7cff, #7a5cff);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.cta .btn-whatsapp:hover { transform: scale(1.05); }
+
+/* FOOTER */
+.site-footer {
+    padding: 60px 20px;
+    background-color: #0b0b0f;
+    border-top: 1px solid #1f1f23;
+    text-align: center;
+}
+
+.footer-mobile-buttons { display: none; gap: 10px; margin-bottom: 20px; }
+
+/* ANIMAÇÕES */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* RESPONSIVIDADE GLOBAL */
+@media (max-width: 768px) {
+    .menu { display: none; }
+    .footer-mobile-buttons { display: flex; justify-content: center; flex-wrap: wrap; }
+    .btn-mini {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+}
