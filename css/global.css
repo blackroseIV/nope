@@ -137,3 +137,21 @@ body {
         font-size: 12px;
     }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Ou a fonte de sua preferência */
+    background-color: #05050a; /* Fundo escuro conforme a imagem */
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+}
