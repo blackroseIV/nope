@@ -1,0 +1,157 @@
+/* ============================================================
+   CONFIGURAÇÃO GERAL DA SEÇÃO
+   ============================================================ */
+.services-section {
+    background-color: #060607;
+    padding: 130px 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: visible;
+}
+
+.services-section::before,
+.services-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 90px;
+    pointer-events: none;
+}
+
+.services-section::before {
+    top: 0;
+    transform: translateY(-90px);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(20, 20, 24, 0.55) 45%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    box-shadow: 0 30px 35px rgba(0, 0, 0, 0.7);
+}
+
+.services-section::after {
+    bottom: 0;
+    transform: translateY(90px);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(18, 18, 22, 0.6) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    box-shadow: 0 -30px 35px rgba(0, 0, 0, 0.7);
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.glow-line {
+    width: 250px;
+    height: 2px;
+    margin: 0 auto 60px auto;
+    background: radial-gradient(circle, #4facfe 0%, rgba(79, 172, 254, 0) 80%);
+    box-shadow: 0px 0px 15px 2px rgba(79, 172, 254, 0.8);
+}
+
+/* ============================================================
+   CONTAINER E CARDS (FORMATO IMAGEM 1)
+   ============================================================ */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 1000px; /* Um pouco mais estreito para verticalizar */
+    margin: 0 auto;
+}
+
+.service-card {
+    /* Cor base inspirada na imagem 1 */
+    background: #121214; 
+    border: 1px solid #1c1c1e;
+    border-radius: 24px; /* Bordas um pouco mais fechadas que a anterior */
+    
+    /* Padding maior nas laterais e altura para ficar vertical */
+    padding: 50px 30px; 
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    background: #18181b;
+    border-color: #2c2c2e;
+    transform: translateY(-8px);
+}
+
+/* ============================================================
+   ÍCONES GIGANTES (ESTILO IMAGEM 2)
+   ============================================================ */
+.icon-box {
+    width: 300px;  /* Aumentei para chamar muita atenção */
+    height: 150px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    /* Efeito de brilho azul característico */
+    filter: drop-shadow(0 10px 20px rgba(79, 172, 254, 0.4));
+    
+    /* Movimento elástico */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Faz a imagem crescer e brilhar no hover do card */
+.service-card:hover .icon-box img {
+    transform: scale(1.2) translateY(-15px);
+    filter: drop-shadow(0 15px 35px rgba(79, 172, 254, 0.7));
+}
+
+/* ============================================================
+   TEXTOS (CENTRALIZADOS E LIMPOS)
+   ============================================================ */
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #a1a1aa; /* Cinza médio da imagem 1 */
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 900px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
