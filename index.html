@@ -2,14 +2,25 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>NOPE — Carregando</title>
-    <link rel="stylesheet" href="css/loading.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOPE — Preparando Experiência</title>
+    <link rel="stylesheet" href="loading.css">
 </head>
 <body>
 
-    <div class="loader">
-        <h1>NOPE</h1>
-        <span>Carregando experiências...</span>
+    <div id="loading-screen">
+        <div class="loader-wrapper">
+            <h1 class="loader-logo" data-text="NOPE">NOPE</h1>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="bar"></div>
+            </div>
+            
+            <div class="loader-status">
+                <span id="percent">0%</span>
+                <span class="status-msg">Iniciando Sistema...</span>
+            </div>
+        </div>
     </div>
 
     <script src="loading.js"></script>
