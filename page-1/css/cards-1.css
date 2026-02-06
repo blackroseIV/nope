@@ -67,25 +67,31 @@
     justify-content: center;
     align-items: stretch;
     gap: 20px;
-    max-width: 1000px; /* Um pouco mais estreito para verticalizar */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+/* Ajuste no card para suportar o link interno */
 .service-card {
-    /* Cor base inspirada na imagem 1 */
     background: #121214; 
     border: 1px solid #1c1c1e;
-    border-radius: 24px; /* Bordas um pouco mais fechadas que a anterior */
-    
-    /* Padding maior nas laterais e altura para ficar vertical */
-    padding: 50px 30px; 
+    border-radius: 24px;
+    padding: 0; /* Removido o padding daqui para o link ocupar tudo */
     flex: 1;
-    
+    transition: all 0.4s ease;
+    overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+}
+
+/* ESTILO DO LINK (O segredo para ficar clicável) */
+.card-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    padding: 50px 30px; /* O padding agora fica no link */
+    text-decoration: none; /* Remove sublinhado */
+    color: inherit; /* Mantém a cor do texto */
+    width: 100%;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -98,7 +104,8 @@
    ÍCONES GIGANTES (ESTILO IMAGEM 2)
    ============================================================ */
 .icon-box {
-    width: 300px;  /* Aumentei para chamar muita atenção */
+    width: 100%; /* Ajustado para ser responsivo dentro do card */
+    max-width: 300px;
     height: 150px; 
     display: flex;
     justify-content: center;
@@ -111,22 +118,18 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    
-    /* Efeito de brilho azul característico */
     filter: drop-shadow(0 10px 20px rgba(79, 172, 254, 0.4));
-    
-    /* Movimento elástico */
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Faz a imagem crescer e brilhar no hover do card */
+/* Faz a imagem crescer quando passa o mouse no card */
 .service-card:hover .icon-box img {
-    transform: scale(1.2) translateY(-15px);
+    transform: scale(1.1) translateY(-10px);
     filter: drop-shadow(0 15px 35px rgba(79, 172, 254, 0.7));
 }
 
 /* ============================================================
-   TEXTOS (CENTRALIZADOS E LIMPOS)
+   TEXTOS
    ============================================================ */
 .service-card h3 {
     font-size: 1.5rem;
@@ -137,7 +140,7 @@
 
 .service-card p {
     font-size: 1rem;
-    color: #a1a1aa; /* Cinza médio da imagem 1 */
+    color: #a1a1aa;
     line-height: 1.5;
     margin: 0;
 }
@@ -152,6 +155,6 @@
     }
     .service-card {
         width: 100%;
-        max-width: 320px;
+        max-width: 350px;
     }
 }

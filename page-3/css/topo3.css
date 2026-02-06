@@ -1,0 +1,233 @@
+/* ========================================================================== 
+   1. RESET & CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif, Arial;
+}
+
+body {
+    background: radial-gradient(circle at top center, #111111 0%, #050505 100%);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* ========================================================================== 
+   2. NAVBAR (CONTAINER)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* permite quebrar em telas pequenas */
+}
+
+/* ========================================================================== 
+   3. BRANDING (LOGO)
+   ========================================================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-box {
+    width: 38px;
+    height: 38px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-letter {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* ========================================================================== 
+   4. NAVEGAÇÃO (LINKS)
+   ========================================================================== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap; /* links quebram linha se precisar */
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 1; /* permite reduzir tamanho em telas pequenas */
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+/* ========================================================================== 
+   5. BOTÕES E CHAMADAS (CTA)
+   ========================================================================== */
+.btn-whatsapp {
+    background: linear-gradient(90deg, #4169e1 0%, #6a5acd 100%);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    display: inline-block;
+    flex-shrink: 1; /* permite encolher em telas pequenas */
+}
+
+.btn-whatsapp:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* ========================================================================== 
+   6. RESPONSIVO — TABLETS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-box {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-letter {
+        font-size: 18px;
+    }
+
+    .btn-whatsapp {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================================================== 
+   7. RESPONSIVO — MOBILE
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .navbar {
+        padding: 12px 14px;
+        overflow-x: hidden; /* remove scroll horizontal */
+    }
+
+    .nav-links {
+        gap: 8px;
+        justify-content: flex-start;
+        flex-wrap: wrap; /* permite quebrar links */
+    }
+
+    .nav-links li a {
+        font-size: 12.5px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .logo-box {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+    }
+
+    .logo-letter {
+        font-size: 16px;
+    }
+
+    /* ajusta WhatsApp para caber na tela */
+    .btn-whatsapp {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ========================================================================== 
+   8. RESPONSIVO — CELULARES MUITO PEQUENOS
+   ========================================================================== */
+@media (max-width: 360px) {
+    .navbar {
+        padding: 10px 12px;
+    }
+
+    .nav-links {
+        gap: 6px;
+    }
+
+    .nav-links li a {
+        font-size: 12px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .logo-box {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo-letter {
+        font-size: 15px;
+    }
+
+    .btn-whatsapp {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
