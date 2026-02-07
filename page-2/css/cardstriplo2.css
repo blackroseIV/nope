@@ -1,9 +1,9 @@
 /* ============================================================
-   CONFIGURAÇÃO GERAL DA SEÇÃO (Fundo unificado com Seção Empresa)
+   CONFIGURAÇÃO GERAL DA SEÇÃO
    ============================================================ */
 .services-section {
-    background-color: #0a0b14; /* Cor idêntica ao .container-empresa */
-    padding: 20px 20px 80px 20px; /* Padding reduzido no topo para tirar o vácuo */
+    background-color: #0a0b14;
+    padding: 20px 20px 80px 20px;
     text-align: center;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -38,25 +38,37 @@
     margin: 0 auto;
 }
 
+/* Card agora é <a> */
 .service-card {
-    /* Cor idêntica ao .card-empresa para padronizar o layout */
-    background: #1a1b26; 
-    border: 1px solid rgba(255, 255, 255, 0.05); 
+    background: #1a1b26;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
-    padding: 50px 30px; 
+    padding: 50px 30px;
     flex: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    text-decoration: none;
+    color: inherit;
+
     transition: all 0.4s ease;
     cursor: pointer;
 }
 
 .service-card:hover {
-    background: #232433; /* Um tom levemente mais claro no hover */
+    background: #232433;
     border-color: rgba(79, 172, 254, 0.3);
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Acessibilidade (teclado) */
+.service-card:focus-visible {
+    outline: none;
+    border-color: rgba(79, 172, 254, 0.6);
+    box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.3);
 }
 
 /* ============================================================
@@ -64,7 +76,7 @@
    ============================================================ */
 .icon-box {
     width: 100%;
-    height: 120px; 
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +109,7 @@
 
 .service-card p {
     font-size: 0.95rem;
-    color: #ccc; /* Cor de texto padrão para melhor leitura no fundo escuro */
+    color: #ccc;
     line-height: 1.6;
     margin: 0;
 }
@@ -110,6 +122,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     .service-card {
         width: 100%;
         max-width: 350px;

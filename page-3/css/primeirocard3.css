@@ -1,204 +1,119 @@
 /* ============================================================
-   CONFIGURAÇÃO GERAL DA SEÇÃO
+   SEÇÃO
    ============================================================ */
 .services-section {
-    background-color: #050508;
-    padding: 120px 20px 100px; /* 👈 resolve invasão da section de cima */
+    background-color: #0a0b14;
+    padding: 40px 20px 80px;
     text-align: center;
-    color: #ffffff;
     font-family: 'Inter', sans-serif;
-    position: relative;
-    overflow: hidden;
-}
-
-.main-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-.glow-line {
-    width: 250px;
-    height: 2px;
-    margin: 0 auto 20px;
-    background: radial-gradient(circle, #4facfe 0%, rgba(79, 172, 254, 0) 80%);
-    box-shadow: 0 0 15px 2px rgba(79, 172, 254, 0.8);
-}
-
-.main-subtitle {
-    color: #a1a1aa;
-    font-size: 18px;
-    margin: 0 auto 80px; /* mais respiro */
-    max-width: 600px;
-    line-height: 1.6;
 }
 
 /* ============================================================
-   CONTAINER E CARDS
+   GRID
    ============================================================ */
 .cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    max-width: 1200px;
-
-    margin: 80px auto 0; /* distância correta do texto */
-    padding-top: 25px;   /* compensa hover */
-
-    flex-wrap: wrap;
-    perspective: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
+/* ============================================================
+   CARD
+   ============================================================ */
 .service-card {
-    background: rgba(18, 18, 26, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 40px 25px;
-    width: 320px;
-    min-height: 520px; /* cards sempre alinhados */
+    background: linear-gradient(180deg, #151722, #0f111a);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 22px;
+    padding: 32px 26px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    backdrop-filter: blur(12px);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    gap: 18px; /* CONTROLA O ESPAÇAMENTO REAL */
+
+    text-decoration: none;
+    color: #fff;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
 }
 
-/* Brilho azulado */
-.service-card::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    background:
-        radial-gradient(circle at top left, rgba(79,124,255,.3), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(79,124,255,.3), transparent 35%);
-    border-radius: 21px;
-    z-index: -1;
-    opacity: .5;
-    transition: .5s;
-}
-
+/* Hover */
 .service-card:hover {
-    transform: translateY(-15px);
-    border-color: rgba(79,172,254,.5);
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.8),
-        0 0 20px rgba(79,172,254,.2);
-}
-
-.service-card:hover::before {
-    opacity: 1;
+    transform: translateY(-6px);
+    border-color: rgba(79, 172, 254, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* ============================================================
-   ÍCONES
+   IMAGEM
    ============================================================ */
 .icon-box {
     width: 100%;
-    height: 140px; /* controla o tamanho */
-    margin-bottom: 30px;
+    height: 90px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    overflow: hidden; /* impede vazamento */
+    align-items: center;
 }
 
 .icon-box img {
-    max-height: 100%;
-    width: auto;
+    max-width: 140px;
+    max-height: 80px;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(79,172,254,.3));
-    transition: all .6s cubic-bezier(.175,.885,.32,1.275);
+
+    filter: drop-shadow(0 4px 10px rgba(79, 172, 254, 0.25));
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .service-card:hover .icon-box img {
-    transform: scale(1.1) translateY(-5px) rotateY(10deg);
-    filter: drop-shadow(0 15px 30px rgba(79,172,254,.7));
+    transform: scale(1.08);
+    filter: drop-shadow(0 8px 18px rgba(79, 172, 254, 0.45));
 }
 
 /* ============================================================
-   TEXTOS
+   TEXTO
    ============================================================ */
 .service-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
+    font-size: 1.15rem;
     font-weight: 600;
+    margin: 6px 0;
+    text-align: center;
 }
 
-.card-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 25px;
-    color: #d1d1d6;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* remove ul vazia */
-.card-list:empty {
-    display: none;
+.service-card p {
+    font-size: 0.9rem;
+    color: #c9c9c9;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
 }
 
 /* ============================================================
-   PREÇOS
+   PREÇO / BOTÃO
    ============================================================ */
-.price-container {
-    width: 100%;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-}
-
-.unit-price {
-    font-size: 12px;
-    color: #a1a1aa;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.unit-price span {
-    color: #ffffff;
+.service-card .price {
+    margin-top: 8px;
+    font-size: 0.9rem;
     font-weight: 600;
-}
-
-.price-tag {
-    width: 90%;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 12px;
-    transition: .4s cubic-bezier(.23,1,.32,1);
-    box-shadow: 0 4px 15px rgba(0,0,0,.2);
-}
-
-.service-card:hover .price-tag {
-    background: #4f7cff;
-    border-color: #4f7cff;
-    box-shadow: 0 0 20px rgba(79,124,255,.5);
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 10px 18px;
+    border-radius: 10px;
 }
 
 /* ============================================================
-   RESPONSIVO
+   MOBILE
    ============================================================ */
-@media (max-width: 768px) {
-    .services-section {
-        padding: 90px 20px 80px;
-    }
-
-    .cards-container {
-        margin-top: 60px;
-        gap: 40px;
-    }
-
+@media (max-width: 600px) {
     .service-card {
-        width: 100%;
-        max-width: 350px;
+        padding: 26px 22px;
+    }
+
+    .icon-box {
+        height: 80px;
+    }
+
+    .icon-box img {
+        max-width: 120px;
     }
 }
