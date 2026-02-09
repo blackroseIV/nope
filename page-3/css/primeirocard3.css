@@ -3,7 +3,7 @@
    ============================================================ */
 .services-section {
     background-color: #050508; /* Preto profundo oficial da Nope */
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -59,6 +59,9 @@
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     backdrop-filter: blur(12px); /* Efeito de vidro */
+    text-decoration: none; /* Remove sublinhado para <a> */
+    color: inherit; /* Herda cor do texto */
+    cursor: pointer;
 }
 
 /* Brilho azulado nas quinas */
@@ -103,10 +106,9 @@
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Efeito Clean & Premium no Hover da Logo */
 .service-card:hover .icon-box img {
-    transform: scale(1.1) translateY(-5px) rotateY(10deg); /* Inclinação 3D sutil */
-    filter: drop-shadow(0 15px 30px rgba(79, 172, 254, 0.7)); /* Brilho intenso */
+    transform: scale(1.1) translateY(-5px) rotateY(10deg);
+    filter: drop-shadow(0 15px 30px rgba(79, 172, 254, 0.7));
 }
 
 /* ============================================================
@@ -129,11 +131,11 @@
 }
 
 /* ============================================================
-   ÁREA DE PREÇOS (CONSOLIDADA)
+   ÁREA DE PREÇOS
    ============================================================ */
 .price-container {
     width: 100%;
-    margin-top: auto; /* Empurra para o fundo do card */
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -145,6 +147,7 @@
     color: #a1a1aa;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .unit-price span {
@@ -163,9 +166,9 @@
     width: 90%;
     transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-/* Efeito de destaque no botão ao passar o mouse no card */
 .service-card:hover .price-tag {
     background: #4f7cff; /* Azul da marca */
     border-color: #4f7cff;
@@ -176,6 +179,12 @@
 /* ============================================================
    RESPONSIVIDADE
    ============================================================ */
+@media (max-width: 1024px) {
+    .cards-container {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .service-card { 
         width: 100%; 
