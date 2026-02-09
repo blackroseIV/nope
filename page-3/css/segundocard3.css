@@ -1,46 +1,67 @@
 /* ============================================================
-    CONFIGURAÇÃO GERAL DA SEÇÃO (CARDS DE BAIXO)
+   CONFIGURAÇÃO GERAL DA SEÇÃO
    ============================================================ */
 .services-section {
-    background-color: #050508;
-    /* Padding superior zerado para não empurrar os cards para baixo */
-    padding: 20px 20px 80px 20px; 
+    background-color: #050508; /* Preto profundo oficial da Nope */
+    padding: 20px 20px;
     text-align: center;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     position: relative;
-    /* Removido overflow: hidden para evitar que o brilho dos ícones seja cortado ao subir */
+    overflow: hidden;
+}
+
+.main-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.glow-line {
+    width: 250px;
+    height: 2px;
+    margin: 0 auto 20px auto;
+    background: radial-gradient(circle, #4facfe 0%, rgba(79, 172, 254, 0) 80%);
+    box-shadow: 0px 0px 15px 2px rgba(79, 172, 254, 0.8);
+}
+
+.main-subtitle {
+    color: #a1a1aa; /* Cinza muted */
+    font-size: 18px;
+    margin: 0 auto 60px;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 /* ============================================================
-    CONTAINER E CARDS (PREMIUM GLASS)
+   CONTAINER E CARDS (PREMIUM GLASS)
    ============================================================ */
 .cards-container {
     display: flex;
     justify-content: center;
     gap: 25px;
     max-width: 1200px;
-    /* Aumentei a margem negativa para -100px para "puxar" os cards para cima */
-    /* Ajuste esse valor (-100px) se precisar que suba mais ou menos */
-    margin: -100px auto 0; 
+    margin: 0 auto;
     flex-wrap: wrap;
-    perspective: 1000px;
+    perspective: 1000px; /* Habilita profundidade para os cards */
 }
 
 .service-card {
     background: rgba(18, 18, 26, 0.6); 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px; 
-    padding: 50px 25px 40px 25px; 
+    padding: 40px 25px;
     width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Efeito de vidro */
 }
 
+/* Brilho azulado nas quinas */
 .service-card::before {
     content: "";
     position: absolute;
@@ -59,47 +80,60 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(79, 172, 254, 0.2);
 }
 
+.service-card:hover::before {
+    opacity: 1;
+}
+
 /* ============================================================
-    ÍCONES E ANIMAÇÃO (TAMANHO GRANDE)
+   ÍCONES E ANIMAÇÃO DA LOGO
    ============================================================ */
 .icon-box {
     width: 100%;
-    height: 140px; 
-    margin-bottom: 30px;
+    height: 120px;
+    margin-bottom: 25px;
     display: flex;
     justify-content: center;
-    align-items: center;
     transition: 0.5s;
 }
 
 .icon-box img {
-    height: 130%; /* Mantido seu ícone grande */
+    height: 130%;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(79, 172, 254, 0.3)); 
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Efeito Clean & Premium no Hover da Logo */
 .service-card:hover .icon-box img {
-    transform: scale(1.1) translateY(-10px) rotateY(10deg);
-    filter: drop-shadow(0 15px 30px rgba(79, 172, 254, 0.7));
+    transform: scale(1.1) translateY(-5px) rotateY(10deg); /* Inclinação 3D sutil */
+    filter: drop-shadow(0 15px 30px rgba(79, 172, 254, 0.7)); /* Brilho intenso */
 }
 
 /* ============================================================
-    TEXTOS E PREÇOS
+   TEXTOS E LISTA
    ============================================================ */
 .service-card h3 {
-    font-size: 20px; 
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 15px;
     font-weight: 600;
     color: #ffffff;
-    min-height: 50px; 
-    display: flex;
-    align-items: center;
 }
 
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    color: #d1d1d6;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   ÁREA DE PREÇOS (CONSOLIDADA)
+   ============================================================ */
 .price-container {
     width: 100%;
-    margin-top: auto;
+    margin-top: auto; /* Empurra para o fundo do card */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -107,10 +141,15 @@
 }
 
 .unit-price {
-    font-size: 11px;
+    font-size: 12px;
     color: #a1a1aa;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.unit-price span {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .price-tag {
@@ -120,22 +159,26 @@
     padding: 12px 25px;
     color: #ffffff;
     font-weight: 700;
-    font-size: 15px;
-    width: 100%; 
-    transition: 0.4s;
-    text-align: center;
+    font-size: 16px;
+    width: 90%;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Efeito de destaque no botão ao passar o mouse no card */
 .service-card:hover .price-tag {
-    background: #4f7cff;
+    background: #4f7cff; /* Azul da marca */
+    border-color: #4f7cff;
     box-shadow: 0 0 20px rgba(79, 124, 255, 0.5);
+    transform: scale(1.05);
 }
 
 /* ============================================================
-    RESPONSIVIDADE
+   RESPONSIVIDADE
    ============================================================ */
 @media (max-width: 768px) {
-    .services-section { padding-top: 20px; }
-    .cards-container { margin-top: 0; } /* Reseta no mobile para não embolar */
-    .service-card { width: 100%; max-width: 320px; }
+    .service-card { 
+        width: 100%; 
+        max-width: 350px; 
+    }
 }
